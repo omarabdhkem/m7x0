@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>404 - Page Not Found | Omar Abd Al-Hakim</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <style>
+        :root {
+            --bg-color: #0D0F1B;
+            --primary-glow-color: #8A2BE2;
+            --secondary-glow-color: #0077FF;
+            --text-primary: #E0E6F1;
+            --text-secondary: #A0AEC0;
+            --glass-bg: rgba(22, 25, 42, 0.6);
+            --glass-border: rgba(138, 43, 226, 0.3);
+            --hover-border: rgba(0, 119, 255, 0.7);
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Roboto', sans-serif;
+            background-image:
+                radial-gradient(circle at 15% 50%, var(--primary-glow-color), transparent 25%),
+                radial-gradient(circle at 85% 30%, var(--secondary-glow-color), transparent 25%);
+            background-attachment: fixed;
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--primary-glow-color), var(--secondary-glow-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .error-code {
+            font-size: 6rem;
+            line-height: 1;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            background: linear-gradient(90deg, var(--primary-glow-color), var(--secondary-glow-color));
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.25s ease;
+        }
+
+        .btn-home:hover {
+            opacity: 0.9;
+        }
+
+        html[lang="ar"] [data-en] { display: none; }
+        html[lang="en"] [data-ar] { display: none; }
+    </style>
+</head>
+<body>
+    <div class="glass-card">
+        <div class="font-space error-code text-gradient">404</div>
+        <h1 class="font-space" style="font-size: 1.5rem; margin-bottom: 0.5rem;">
+            <span data-ar>الصفحة غير موجودة</span>
+            <span data-en>Page Not Found</span>
+        </h1>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+            <span data-ar>عذراً، الرابط الذي تحاول الوصول إليه غير موجود أو تم تحريكه.</span>
+            <span data-en>Sorry, the page you are looking for doesn't exist or has been moved.</span>
+        </p>
+        <a href="index.html" class="btn-home">
+            <span class="material-symbols-outlined">home</span>
+            <span data-ar>العودة للصفحة الرئيسية</span>
+            <span data-en>Back to Homepage</span>
+        </a>
+    </div>
+
+    <script>
+        var savedLang = localStorage.getItem('m7x_lang') || 'en';
+        document.documentElement.setAttribute('lang', savedLang);
+        document.documentElement.setAttribute('dir', savedLang === 'ar' ? 'rtl' : 'ltr');
+    </script>
+</body>
+</html>
